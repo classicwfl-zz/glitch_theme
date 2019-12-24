@@ -1,0 +1,48 @@
+/* Glitch Navigation */
+
+.glitch_navButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    width: 40px;
+    height: 30px;
+    transition: all .3s ease-in-out;
+
+    & > div {
+        position: absolute;
+        right: 0;
+        height: 2px;
+        width: 100%;
+        background-color: @glitch-darkColor;
+        transition: all .3 ease-in-out;
+
+        &:nth-child(1) {
+            top: 0;
+        }
+
+        &:nth-child(2) {
+            top: 14px;
+            width: 80%;
+        }
+
+        &:nth-child(3) {
+            bottom: 0;
+        }
+    }
+
+    &:hover {
+        transform: rotate(-180deg);
+    }
+
+    &.glitch_navButton--active {
+        & > div {
+            top: 14px !important;
+            width: 100% !important;
+        }
+    }
+}
+
+.admin-bar .glitch_navButton {
+    top: 42px;
+}

@@ -1,0 +1,157 @@
+/* Home-Specific Glitching */
+@glitch-pink: magenta;
+@glitch-yellow: yellow;
+@glitch-blue: cyan;
+@glitch_shadowAnimDuration: 1s;
+
+.gl1tch.gl1tch--noRadius {
+    border-radius: 0;
+}
+
+.gl1tch--shadow1 {
+    animation: gl1tchAnimShadow1 @glitch_shadowAnimDuration;
+}
+
+.gl1tch--shadow2 {
+    animation: gl1tchAnimShadow1 @glitch_shadowAnimDuration;
+}
+
+.gl1tch--shadow3 {
+    animation: gl1tchAnimShadow1 @glitch_shadowAnimDuration;
+}
+
+.gl1tch--shadow4 {
+    animation: gl1tchAnimShadow1 @glitch_shadowAnimDuration;
+}
+
+@keyframes gl1tchAnimShadow1 {
+    0% {
+        box-shadow:none;
+    }
+    20% {
+        box-shadow:15px 10px 0 0 @glitch-yellow, 5px 9px 0 0 @glitch-pink;
+    }
+    50% {
+        box-shadow:12px 1px 0 0 @glitch-yellow, 0px 0px 0 0 @glitch-pink, -5px 6px 0 0 @glitch-blue;
+    }
+    60% {
+        box-shadow:-3px -10px 0 0 @glitch-yellow, -9px -2px 0 0 @glitch-pink, 1px 12px 0 0 @glitch-blue;
+    }
+    75% {
+        box-shadow:-4px 2px 0 0 @glitch-yellow, 10px 11px 0 0 @glitch-pink, 4px -8px 0 0 @glitch-blue;
+    }
+    100% {
+        box-shadow:none;
+    }
+}
+
+@keyframes gl1tchAnimShadow2 {
+    0% {
+        box-shadow:none;
+    }
+    30% {
+        box-shadow:15px 10px 0 0 @glitch-yellow, 5px 9px 0 0 @glitch-pink;
+    }
+    40% {
+        box-shadow:12px 1px 0 0 @glitch-yellow, 0px 0px 0 0 @glitch-pink, -5px 6px 0 0 @glitch-blue;
+    }
+    60% {
+        box-shadow:-3px -10px 0 0 @glitch-yellow, -9px -2px 0 0 @glitch-pink, 1px 12px 0 0 @glitch-blue;
+    }
+    85% {
+        box-shadow:-4px 2px 0 0 @glitch-yellow, 10px 11px 0 0 @glitch-pink, 4px -8px 0 0 @glitch-blue;
+    }
+    100% {
+        box-shadow:none;
+    }
+}
+
+@keyframes gl1tchAnimShadow3 {
+    0% {
+        box-shadow:none;
+    }
+    10% {
+        box-shadow:3px 3px 0 0 @glitch-blue, -2px 5px 0 0 @glitch-pink;
+    }
+    30% {
+        box-shadow:6px 1px 0 0 @glitch-yellow, 2px -10px 0 0 @glitch-pink, -12px 5px 0 0 @glitch-blue;
+    }
+    60% {
+        box-shadow:10px -3px 0 0 @glitch-yellow, 5px -4px 0 0 @glitch-pink, 7px 4px 0 0 @glitch-blue;
+    }
+    70% {
+        box-shadow:-14px -5px 0 0 @glitch-yellow, 0px 7px 0 0 @glitch-pink, 2px 3px 0 0 @glitch-blue;
+    }
+    100% {
+        box-shadow:none;
+    }
+}
+
+@keyframes gl1tchAnimShadow4 {
+    0% {
+        box-shadow:none;
+    }
+    25% {
+        box-shadow:10px -3px 0 0 @glitch-yellow, 7px 1px 0 0 @glitch-blue;
+    }
+    40% {
+        box-shadow:-13px 6px 0 0 @glitch-yellow, 2px 12px 0 0 @glitch-pink, 6px 9px 0 0 @glitch-blue;
+    }
+    65% {
+        box-shadow:0px 0px 0 0 @glitch-yellow, -3px 14px 0 0 @glitch-pink, 5px -3px 0 0 @glitch-blue;
+    }
+    90% {
+        box-shadow:-8px 4px 0 0 @glitch-yellow, 5px 2px 0 0 @glitch-pink, 14px -5px 0 0 @glitch-blue;
+    }
+    100% {
+        box-shadow:none;
+    }
+}
+
+/* Headline Glitching */
+
+.gl1tch--text {
+    font-family: @glitch-monospaceType;
+    font-size: 0;
+    line-height: .8;
+
+    &:before {
+        display: inline;
+        font-size: @glitch-fontSizeXxl;
+    }
+}
+
+.gl1tch--text.a:before {content: '4' !important;}
+.gl1tch--text.b:before {content: '\00df' !important;}
+.gl1tch--text.c:before {content: '(' !important;}
+.gl1tch--text.d:before {content: 'd'; text-transform: lowercase;}
+.gl1tch--text.e:before {content: '3' !important;}
+.gl1tch--text.f:before {content: 'f'; text-transform: lowercase;}
+.gl1tch--text.g:before {content: 'g'; text-transform: lowercase;}
+.gl1tch--text.h:before {content: 'h'; text-transform: lowercase;}
+.gl1tch--text.i:before {content: '!' !important;}
+.gl1tch--text.j:before {content: 'j'; text-transform: lowercase;}
+.gl1tch--text.k:before {content: 'k'; text-transform: lowercase;}
+.gl1tch--text.l:before {content: '1' !important;}
+.gl1tch--text.m:before {content: 'm' !important;}
+.gl1tch--text.n:before {content: 'n'; text-transform: lowercase;}
+.gl1tch--text.o:before {content: '0' !important;}
+.gl1tch--text.p:before {content: 'p'; text-transform: lowercase;}
+.gl1tch--text.q:before {content: 'q'; text-transform: lowercase;}
+.gl1tch--text.r:before {content: 'Я' !important;}
+.gl1tch--text.s:before {content: '5' !important;}
+.gl1tch--text.t:before {content: '7' !important;}
+.gl1tch--text.u:before {content: 'u'; text-transform: lowercase;}
+.gl1tch--text.v:before {content: 'v'; text-transform: lowercase;}
+.gl1tch--text.w:before {content: 'w'; text-transform: lowercase;}
+.gl1tch--text.x:before {content: '}{' !important;}
+.gl1tch--text.y:before {content: 'y'; text-transform: lowercase;}
+.gl1tch--text.z:before {content: '2' !important;}
+.glitch--text.period:before {content: ',' !important;}
+.glitch--text.exclaim:before {content: '!1' !important;}
+.glitch--text.colon:before {content: ';' !important;}
+.glitch--text.semicolon:before {content: ':' !important;}
+.glitch--text.amp:before {content: '+' !important;}
+.glitch--text.space:before {content: '\005F' !important;}
+.glitch--text.quote:before {content: '\00b4' !important;}
+.glitch--text.dblquote:before {content: '\2018' !important;}

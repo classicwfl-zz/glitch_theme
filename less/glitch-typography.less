@@ -1,0 +1,91 @@
+body {
+    font-family: @glitch-bodyType;
+    font-size: @glitch-fontSizeMd;
+    color: @glitch-darkColor;
+}
+
+h1  {
+    font-weight: @glitch-fontHeavy;
+    font-size: @glitch-fontSizeXxl;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-weight: @glitch-fontHeavy;
+    font-size: @glitch-fontSizeXl;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-weight: @glitch-fontNorm;
+    font-size: @glitch-fontSizeXl;
+}
+
+h4 {
+    font-weight: @glitch-fontHeavy;
+    font-size: @glitch-fontSizeLg;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-weight: @glitch-fontLight;
+    font-size: @glitch-fontSizeLg;
+}
+
+h6 {
+    font-weight: @glitch-fontHeavy;
+    font-size: @glitch-fontSizeMd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: @glitch-headlineType;
+    letter-spacing: -.05em;
+}
+
+.fontSize_sm {font-size: @glitch-fontSizeSm;}
+.fontSize_md {font-size: @glitch-fontSizeMd;}
+.fontSize_lg {font-size: @glitch-fontSizeLg;}
+.fontSize_xl {font-size: @glitch-fontSizeXl;}
+
+p {
+    line-height: 1.3;
+    margin-bottom: @glitch-spaceLg;
+}
+
+a {
+    text-decoration: none;
+    color: @glitch-secondaryColor;
+    -webkit-box-shadow: inset 0px 0px 0px 0px @glitch-darkColor;
+    -moz-box-shadow: inset 0px 0px 0px 0px @glitch-darkColor;
+    box-shadow: inset 0px 0px 0px 0px @glitch-darkColor;
+    transition: box-shadow .3s ease-in-out;
+
+    &:hover {
+        -webkit-box-shadow: inset 0px -300px 0px 0px @glitch-darkColor;
+        -moz-box-shadow: inset 0px -300px 0px 0px @glitch-darkColor;
+        box-shadow: inset 0px -300px 0px 0px @glitch-darkColor;
+    }
+}
+
+.glitch_termType {
+    font-family: @glitch-monospaceType;
+    letter-spacing: -.05em;
+}
+
+.glitch_massiveType {
+    font-size: @glitch-fontSizeXxx;
+    @media (max-width: @glitch-mdBreakpoint) {
+        font-size: @glitch-fontSizeXxl;
+    }
+}
+
+.glitch_primaryHighlight {
+    color: @glitch-primaryColor;
+}
+
+.glitch_termHead {
+    font-size: @glitch-fontSizeMd;
+    font-weight: @glitch-fontNorm;
+    text-transform: lowercase;
+    padding: 16px 50px 16px 16px;
+}

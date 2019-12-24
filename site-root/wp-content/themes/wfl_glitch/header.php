@@ -10,7 +10,7 @@
 <body <?php body_class(); ?>>
     <div id="wrapper" class="hfeed">
         <header id="header">
-            <div id="branding">
+            <!--<div id="branding">
                 <div id="site-title">
                     <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
@@ -24,5 +24,14 @@
                 <div id="search"><?php get_search_form(); ?></div>
                 <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
             </nav>
+            -->
+
+            <h2 class="glitch_termType glitch_termHead">guest@classicwfl.com:<span class="glitch_primaryHighlight">~</span>$ ./intro.sh</h2>
+
+            <div class="glitch_navButton">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </header>
         <div id="container">

@@ -1,0 +1,31 @@
+body {
+    background-color: @glitch-lightColor;
+    color: @glitch-darkColor;
+}
+
+body.glitch_darkMode {
+    background-color: @glitch-darkColor;
+    color: @glitch-lightColor;
+}
+
+.glitch_container {
+    width: 100%;
+    padding: @glitch-spaceXxl @glitch-spaceLg 0 @glitch-spaceLg;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.glitch_column {
+    flex-basis: 47%;
+
+    @media (max-width: @glitch-mdBreakpoint) {
+        flex-basis: 100%;
+    }
+}
+
+.glitch_column--full {
+    flex-basis: 100%;
+}
