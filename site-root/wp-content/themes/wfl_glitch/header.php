@@ -28,10 +28,10 @@
 
             <h2 class="glitch_termType glitch_termHead">guest@classicwfl.com:<span class="glitch_primaryHighlight">~</span>$ ./intro.sh</h2>
 
-            <div class="glitch_navButton">
+            <button id="glitch_toggleNav" class="glitch_navButton">
                 <div></div>
                 <div></div>
                 <div></div>
-            </div>
+            </button>
         </header>
         <div id="container">

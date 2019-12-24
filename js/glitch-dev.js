@@ -1,11 +1,13 @@
 jQuery( document ).ready(function() {
     if (jQuery("body").hasClass("home")) { 
-        glitchTimer = setInterval(function(){setTimeout(addGlitchHomeArt,genTimer(8000))},1000); 
+        glitchTimer = setInterval(function(){setTimeout(addGlitchHomeArt,genTimer(6000))},2200); 
         glitchRadiusTimer = setInterval(function(){setTimeout(addGlitchRadiusHomeArt,genTimer(4000))},1000);
     }
 
     addGlitchHeadlineSpan();
-    glitchTextTimer = setInterval(function(){setTimeout(glitchHeadline,genTimer(5000))},1000);
+    glitchTextTimer = setInterval(function(){setTimeout(glitchHeadline,genTimer(5000))},2000);
+
+    document.getElementById("glitch_toggleNav").addEventListener("click", glitch_toggleNav, false);
 });
 
 function addGlitchHomeArt() {
@@ -44,28 +46,28 @@ function addGlitchHeadlineSpan() {
     
     switch (glitchChar) {
         case " ":
-            glitchCharSelector = "space";
+            glitchCharSelector = "spacechar";
             break;
         case "&":
-            glitchCharSelector = "amp";
+            glitchCharSelector = "ampchar";
             break;
         case ";":
-            glitchCharSelector = "semicolon";
+            glitchCharSelector = "semicolonchar";
             break;
         case ":":
-            glitchCharSelector = "colon";
+            glitchCharSelector = "colonchar";
             break;
         case "!":
-            glitchCharSelector = "exclaim";
+            glitchCharSelector = "exclaimchar";
             break;
         case ".":
-            glitchCharSelector = "period";
+            glitchCharSelector = "periodchar";
             break;
         case '"':
-            glitchCharSelector = "dblquote";
+            glitchCharSelector = "dblquotechar";
             break;
         case "\'":
-            glitchCharSelector = "quote";
+            glitchCharSelector = "quotechar";
             break;
     }
 
@@ -78,15 +80,28 @@ function addGlitchHeadlineSpan() {
 }
 
 function glitchHeadline() {
-    var glitchChar = jQuery("h1 > span.gl1tch");
+    var glitchCharObj = jQuery("h1 > span.gl1tch");
     var glitchDuration = Math.floor(Math.random() * 1000);
 
-    glitchChar.addClass("gl1tch--text");
+    glitchCharObj.addClass("gl1tch--text");
     setTimeout(function () {
-        glitchChar.removeClass("gl1tch--text");
+        glitchCharObj.removeClass("gl1tch--text");
     }, glitchDuration);
 }
 
 function genTimer(dur) {
     return Math.floor(Math.random() * dur);
+}
+
+/* Nav Trigger */
+
+
+function glitch_toggleNav() {
+    glitch_navActive = jQuery(".glitch_navButton").hasClass("glitch_navButton--active");
+
+    if (glitch_navActive) {
+        jQuery(".glitch_navButton").removeClass("glitch_navButton--active");
+    } else {
+        jQuery(".glitch_navButton").addClass("glitch_navButton--active");
+    }
 }

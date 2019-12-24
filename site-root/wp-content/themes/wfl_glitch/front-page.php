@@ -40,7 +40,7 @@ get_header(); ?>
 	<div class="glitch_column"><div class="glitch_featureBox">
 		<h2 class="fontSize_lg">“I just want to look at your site!”</h2>
 
-		<p>No problerm; just use the navigation icon in the upper right to access the menu, and you can start browsing to your heart’s content my art, photography, videos, music, blogs and more.</p>
+		<p>No problem; just use the navigation icon in the upper right to access the menu, and you can start browsing to your heart’s content my art, photography, videos, music, blogs and more.</p>
 
 		<p>Alternatively, you can hate me and my work and tell me just how much by contacting me. I love hate mail, and if you’re the right (or wrong) kind of lucky, I may share it for my readers in my blog or a video.</p>
 	</div></div>

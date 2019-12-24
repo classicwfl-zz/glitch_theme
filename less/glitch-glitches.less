@@ -115,43 +115,46 @@
     font-size: 0;
     line-height: .8;
 
-    &:before {
+    &:after {
         display: inline;
         font-size: @glitch-fontSizeXxl;
+        content: '_'; //Remove if using below crap
     }
 }
 
-.gl1tch--text.a:before {content: '4' !important;}
-.gl1tch--text.b:before {content: '\00df' !important;}
-.gl1tch--text.c:before {content: '(' !important;}
-.gl1tch--text.d:before {content: 'd'; text-transform: lowercase;}
-.gl1tch--text.e:before {content: '3' !important;}
-.gl1tch--text.f:before {content: 'f'; text-transform: lowercase;}
-.gl1tch--text.g:before {content: 'g'; text-transform: lowercase;}
-.gl1tch--text.h:before {content: 'h'; text-transform: lowercase;}
-.gl1tch--text.i:before {content: '!' !important;}
-.gl1tch--text.j:before {content: 'j'; text-transform: lowercase;}
-.gl1tch--text.k:before {content: 'k'; text-transform: lowercase;}
-.gl1tch--text.l:before {content: '1' !important;}
-.gl1tch--text.m:before {content: 'm' !important;}
-.gl1tch--text.n:before {content: 'n'; text-transform: lowercase;}
-.gl1tch--text.o:before {content: '0' !important;}
-.gl1tch--text.p:before {content: 'p'; text-transform: lowercase;}
-.gl1tch--text.q:before {content: 'q'; text-transform: lowercase;}
-.gl1tch--text.r:before {content: 'Я' !important;}
-.gl1tch--text.s:before {content: '5' !important;}
-.gl1tch--text.t:before {content: '7' !important;}
-.gl1tch--text.u:before {content: 'u'; text-transform: lowercase;}
-.gl1tch--text.v:before {content: 'v'; text-transform: lowercase;}
-.gl1tch--text.w:before {content: 'w'; text-transform: lowercase;}
-.gl1tch--text.x:before {content: '}{' !important;}
-.gl1tch--text.y:before {content: 'y'; text-transform: lowercase;}
-.gl1tch--text.z:before {content: '2' !important;}
-.glitch--text.period:before {content: ',' !important;}
-.glitch--text.exclaim:before {content: '!1' !important;}
-.glitch--text.colon:before {content: ';' !important;}
-.glitch--text.semicolon:before {content: ':' !important;}
-.glitch--text.amp:before {content: '+' !important;}
-.glitch--text.space:before {content: '\005F' !important;}
-.glitch--text.quote:before {content: '\00b4' !important;}
-.glitch--text.dblquote:before {content: '\2018' !important;}
+/* This crap didn't totally work, but I'm leaving it just in case I try to fix it 
+.gl1tch--text.a:after {content: '4';}
+.gl1tch--text.b:after {content: '\00df';}
+.gl1tch--text.c:after {content: '(';}
+.gl1tch--text.d:after {content: 'd'; text-transform: lowercase;}
+.gl1tch--text.e:after {content: '_';}
+.gl1tch--text.f:after {content: 'f'; text-transform: lowercase;}
+.gl1tch--text.g:after {content: 'g'; text-transform: lowercase;}
+.gl1tch--text.h:after {content: 'h'; text-transform: lowercase;}
+.gl1tch--text.i:after {content: '!';}
+.gl1tch--text.j:after {content: 'j'; text-transform: lowercase;}
+.gl1tch--text.k:after {content: 'k'; text-transform: lowercase;}
+.gl1tch--text.l:after {content: '1';}
+.gl1tch--text.m:after {content: 'm';}
+.gl1tch--text.n:after {content: 'n'; text-transform: lowercase;}
+.gl1tch--text.o:after {content: '0';}
+.gl1tch--text.p:after {content: 'p'; text-transform: lowercase;}
+.gl1tch--text.q:after {content: 'q'; text-transform: lowercase;}
+.gl1tch--text.r:after {content: 'Я';}
+.gl1tch--text.s:after {content: '5';}
+.gl1tch--text.t:after {content: '7';}
+.gl1tch--text.u:after {content: 'u'; text-transform: lowercase;}
+.gl1tch--text.v:after {content: 'v'; text-transform: lowercase;}
+.gl1tch--text.w:after {content: 'w'; text-transform: lowercase;}
+.gl1tch--text.x:after {content: '}{';}
+.gl1tch--text.y:after {content: 'y'; text-transform: lowercase;}
+.gl1tch--text.z:after {content: '2';}
+.glitch--text.periodchar:after {content: '.';}
+.glitch--text.exclaimchar:after {content: '!1';}
+.glitch--text.colonchar:after {content: ';';}
+.glitch--text.semicolonchar:after {content: ':';}
+.glitch--text.amp:after {content: '+';}
+.glitch--text.spacechar:after {content: '\_';}
+.glitch--text.quotechar:after {content: '\00b4';}
+.glitch--text.dblquotechar:after {content: '\2018';}
+*/
