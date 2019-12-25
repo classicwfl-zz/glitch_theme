@@ -112,6 +112,10 @@
     min-height: 300px;
     padding-top: @glitch-spaceXl;
 
+    &.glitch_noPhoto {
+        height: auto;
+    }
+
     & h1 {
         background-color: @glitch-lightColor;
         display: inline;
@@ -143,5 +147,34 @@
     p {
         margin-bottom: 0;
         margin-top: @glitch-spaceLg;
+    }
+}
+
+.glitch_postFooter {
+    width: 100%;
+
+    & > nav > .nav-links {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        
+        & > div {
+            width: 50%;
+            min-width: 250px;
+            padding: @glitch-spaceMd;
+            flex-grow: 1;
+
+            &:first-child {
+                text-align: left;
+            }
+
+            &:nth-child(2) {
+                text-align: right;
+            }
+
+            @media (max-width: @glitch-smBreakpoint) {
+                width: 100%;
+            }
+        }
     }
 }

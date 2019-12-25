@@ -41,6 +41,8 @@
             $post_title = get_the_title();
             $post_title = str_replace(" ", "_", $post_title);
             $post_title = str_replace(".", "_", $post_title);
+            $post_title = str_replace(",", "", $post_title);
+            $post_title = str_replace("'", "", $post_title);
             echo $post_title;
         ?></a>.odf</li>
         <?php 
@@ -65,6 +67,8 @@
             $post_title = get_the_title();
             $post_title = str_replace(" ", "_", $post_title);
             $post_title = str_replace(".", "_", $post_title);
+            $post_title = str_replace(",", "", $post_title);
+            $post_title = str_replace("'", "", $post_title);
             echo $post_title;
         ?></a>.jpg</li>
         <?php 
@@ -89,6 +93,8 @@
             $post_title = get_the_title();
             $post_title = str_replace(" ", "_", $post_title);
             $post_title = str_replace(".", "_", $post_title);
+            $post_title = str_replace(",", "", $post_title);
+            $post_title = str_replace("'", "", $post_title);
             echo $post_title;
         ?></a>.jpg</li>
         <?php 
@@ -113,6 +119,8 @@
             $post_title = get_the_title();
             $post_title = str_replace(" ", "_", $post_title);
             $post_title = str_replace(".", "_", $post_title);
+            $post_title = str_replace(",", "", $post_title);
+            $post_title = str_replace("'", "", $post_title);
             echo $post_title;
         ?></a>.ogg</li>
         <?php 
@@ -137,6 +145,8 @@
             $post_title = get_the_title();
             $post_title = str_replace(" ", "_", $post_title);
             $post_title = str_replace(".", "_", $post_title);
+            $post_title = str_replace(",", "", $post_title);
+            $post_title = str_replace("'", "", $post_title);
             echo $post_title;
         ?></a>.pdf</li>
         <?php 
@@ -160,6 +170,8 @@
                     $term_title = get_the_title();
                     $term_title = str_replace(" ", "_", $term_title);
                     $term_title = str_replace(".", "_", $term_title);
+                    $term_title = str_replace(",", "", $term_title);
+                    $term_title = str_replace("'", "", $term_title);
                     echo 'less ' . $term_title . '</a>.odf';
                 } else {
                     echo './intro.sh';

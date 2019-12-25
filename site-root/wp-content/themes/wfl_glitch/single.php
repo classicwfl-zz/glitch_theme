@@ -3,9 +3,11 @@
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <div class="glitch_container">
-        <header class="glitch_column glitch_postHead" <?php 
+        <header class="glitch_column glitch_postHead<?php 
             if ( has_post_thumbnail() ) {
-                ?>style="background-image: url('<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>');"<?php
+                ?>" style="background-image: url('<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>');"<?php
+            } else {
+                echo ' glitch_noPhoto"';
             }
         ?>>
             <h1><?php the_title(); ?></h1>
@@ -34,8 +36,10 @@
                 echo $content;
             ?>
         </div>
+    </div>
 
-        <footer class="footer">
+    <div class="glitch_container">
+        <footer class="footer glitch_postFooter">
             <?php get_template_part( 'nav', 'below-single' ); ?>
         </footer>
     </div>

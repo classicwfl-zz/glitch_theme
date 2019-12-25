@@ -43,7 +43,6 @@ function addGlitchHeadlineSpan() {
     var textLength = splitText.length;
     var textIndex = Math.floor(Math.random() * textLength);
     var glitchChar = splitText[textIndex].toLowerCase();
-    console.log(glitchChar);
     var glitchCharSelector = glitchChar;
     
     switch (glitchChar) {
@@ -72,8 +71,6 @@ function addGlitchHeadlineSpan() {
             glitchCharSelector = "quotechar";
             break;
     }
-
-    console.log(glitchCharSelector);
 
     splitText[textIndex] = '<span class="gl1tch ' + glitchCharSelector + '">' + splitText[textIndex] + "</span>";
     var finalText = splitText.join("");
