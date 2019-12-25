@@ -1,4 +1,21 @@
 <!DOCTYPE html>
+
+<?php
+
+    if(!isset($_COOKIE["darkmode"])){
+        $cookie_name = "darkmode";
+        $cookie_value = "0";
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 365), "/"); // 86400 = 1 day
+    }
+
+    if ($_COOKIE["darkmode"]) {
+        $extraBodyClass = "d4rkm0d3";
+    } else {
+        $extraBodyClass = "";
+    }
+    
+?>
+
 <html <?php language_attributes(); ?>>
 
 <head>
@@ -7,31 +24,154 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( $extraBodyClass ); ?>>
+
+    <div class="glitch_navContainer">
+        <h2 class="glitch_termType glitch_termHead">guest@classicwfl.com:<a href="/">~</a>$ ls -R ~/</h2>
+        <p>./<a href="/">home</a>:</p>
+        <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+
+        <p>./<a href="/articles">articles</a>:</p>
+        <!-- Latest Posts -->
+        <ul>
+        <?php $latest_posts = new WP_Query( 'posts_per_page=1' ); 
+        while ($latest_posts -> have_posts()) : $latest_posts -> the_post(); ?>
+        
+        <li><a href="<?php the_permalink() ?>"><?php 
+            $post_title = get_the_title();
+            $post_title = str_replace(" ", "_", $post_title);
+            $post_title = str_replace(".", "_", $post_title);
+            echo $post_title;
+        ?></a>.odf</li>
+        <?php 
+            endwhile;
+            wp_reset_postdata();
+        ?>
+        </ul>
+
+        <p>./<a href="/photography-by-wfl/">photography</a>:</p>
+        <!-- Latest Photo -->
+        <ul>
+        <?php 
+        $args = array(
+            'post_type'              => array( 'photography' ),
+            'posts_per_page'         => '1',
+        );
+
+        $latest_photo = new WP_Query( $args ); 
+        while ($latest_photo -> have_posts()) : $latest_photo -> the_post(); ?>
+        
+        <li><a href="<?php the_permalink() ?>"><?php 
+            $post_title = get_the_title();
+            $post_title = str_replace(" ", "_", $post_title);
+            $post_title = str_replace(".", "_", $post_title);
+            echo $post_title;
+        ?></a>.jpg</li>
+        <?php 
+            endwhile;
+            wp_reset_postdata();
+        ?>
+        </ul>
+
+        <p>./<a href="/art-portfolio/">art</a>:</p>
+        <!-- Latest Art -->
+        <ul>
+        <?php 
+        $args = array(
+            'post_type'              => array( 'portfolio' ),
+            'posts_per_page'         => '1',
+        );
+
+        $latest_photo = new WP_Query( $args ); 
+        while ($latest_photo -> have_posts()) : $latest_photo -> the_post(); ?>
+        
+        <li><a href="<?php the_permalink() ?>"><?php 
+            $post_title = get_the_title();
+            $post_title = str_replace(" ", "_", $post_title);
+            $post_title = str_replace(".", "_", $post_title);
+            echo $post_title;
+        ?></a>.jpg</li>
+        <?php 
+            endwhile;
+            wp_reset_postdata();
+        ?>
+        </ul>
+
+        <p>./<a href="/records/">music</a>:</p>
+        <!-- Latest Record -->
+        <ul>
+        <?php 
+        $args = array(
+            'post_type'              => array( 'records' ),
+            'posts_per_page'         => '1',
+        );
+
+        $latest_photo = new WP_Query( $args ); 
+        while ($latest_photo -> have_posts()) : $latest_photo -> the_post(); ?>
+        
+        <li><a href="<?php the_permalink() ?>"><?php 
+            $post_title = get_the_title();
+            $post_title = str_replace(" ", "_", $post_title);
+            $post_title = str_replace(".", "_", $post_title);
+            echo $post_title;
+        ?></a>.ogg</li>
+        <?php 
+            endwhile;
+            wp_reset_postdata();
+        ?>
+        </ul>
+
+        <p>./<a href="/merchandise/">merch</a>:</p>
+        <!-- Latest Merch -->
+        <ul>
+        <?php 
+        $args = array(
+            'post_type'              => array( 'merch' ),
+            'posts_per_page'         => '1',
+        );
+
+        $latest_photo = new WP_Query( $args ); 
+        while ($latest_photo -> have_posts()) : $latest_photo -> the_post(); ?>
+        
+        <li><a href="<?php the_permalink() ?>"><?php 
+            $post_title = get_the_title();
+            $post_title = str_replace(" ", "_", $post_title);
+            $post_title = str_replace(".", "_", $post_title);
+            echo $post_title;
+        ?></a>.pdf</li>
+        <?php 
+            endwhile;
+            wp_reset_postdata();
+        ?>
+        </ul>
+    </div>
+
     <div id="wrapper" class="hfeed">
         <header id="header">
-            <!--<div id="branding">
-                <div id="site-title">
-                    <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                        title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>"
-                        rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
-                    <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
-                </div>
-                <div id="site-description"><?php bloginfo( 'description' ); ?></div>
-            </div>
-            <nav id="menu">
-                <div id="search"><?php get_search_form(); ?></div>
-                <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-            </nav>
-            -->
-
-            <h2 class="glitch_termType glitch_termHead">guest@classicwfl.com:<span class="glitch_primaryHighlight">~</span>$ ./intro.sh</h2>
+            <h2 class="glitch_termType glitch_termHead">guest@classicwfl.com:<a href="/">~</a><?php
+        
+                if (is_single()) {
+                    echo '/<a href="/articles">articles</a>';
+                }
+            
+            ?>$ <?php
+        
+                if (is_single()) {
+                    $term_title = get_the_title();
+                    $term_title = str_replace(" ", "_", $term_title);
+                    $term_title = str_replace(".", "_", $term_title);
+                    echo 'less ' . $term_title . '</a>.odf';
+                } else {
+                    echo './intro.sh';
+                }
+            
+            ?></h2>
 
             <button id="glitch_toggleNav" class="glitch_navButton">
                 <div></div>
                 <div></div>
                 <div></div>
             </button>
+            <button id="glitch_toggleDarkMode" class="glitch_darkModeToggle">Switch Color Mode</button>
         </header>
         <div id="container">

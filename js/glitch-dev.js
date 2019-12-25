@@ -8,6 +8,8 @@ jQuery( document ).ready(function() {
     glitchTextTimer = setInterval(function(){setTimeout(glitchHeadline,genTimer(5000))},2000);
 
     document.getElementById("glitch_toggleNav").addEventListener("click", glitch_toggleNav, false);
+
+    document.getElementById("glitch_toggleDarkMode").addEventListener("click", darkModeSwitch, false);
 });
 
 function addGlitchHomeArt() {
@@ -94,14 +96,25 @@ function genTimer(dur) {
 }
 
 /* Nav Trigger */
-
-
 function glitch_toggleNav() {
     glitch_navActive = jQuery(".glitch_navButton").hasClass("glitch_navButton--active");
 
     if (glitch_navActive) {
         jQuery(".glitch_navButton").removeClass("glitch_navButton--active");
+        jQuery(".glitch_navContainer").removeClass("glitch_navContainer--active");
     } else {
         jQuery(".glitch_navButton").addClass("glitch_navButton--active");
+        jQuery(".glitch_navContainer").addClass("glitch_navContainer--active");
+    }
+}
+
+/* Dark Mode Trigger */
+function darkModeSwitch() {
+    if (jQuery("body").hasClass("d4rkm0d3")) {
+        jQuery("body").removeClass("d4rkm0d3");
+        document.cookie = "darkmode=0";
+    } else {
+        jQuery("body").addClass("d4rkm0d3");
+        document.cookie = "darkmode=1";
     }
 }

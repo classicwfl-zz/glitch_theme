@@ -108,18 +108,42 @@
     }
 }
 
+//Button hover glitch anim
+
+@keyframes gl1tchAnimShadowSmall {
+    0% {
+        box-shadow:none;
+    }
+    20% {
+        box-shadow:3px 2px 0 0 @glitch-yellow, 5px 4px 0 0 @glitch-pink;
+    }
+    50% {
+        box-shadow:2px 1px 0 0 @glitch-yellow, 0px 0px 0 0 @glitch-pink, -5px 3px 0 0 @glitch-blue;
+    }
+    60% {
+        box-shadow:-3px -5px 0 0 @glitch-yellow, -5px -2px 0 0 @glitch-pink, 1px 4px 0 0 @glitch-blue;
+    }
+    75% {
+        box-shadow:-4px 2px 0 0 @glitch-yellow, 3px 5px 0 0 @glitch-pink, 4px -2px 0 0 @glitch-blue;
+    }
+    100% {
+        box-shadow:none;
+    }
+}
+
 /* Headline Glitching */
 
 .gl1tch--text {
-    font-family: @glitch-monospaceType;
     font-size: 0;
-    line-height: .8;
 
     &:after {
-        display: inline;
-        font-size: @glitch-fontSizeXxl;
         content: '_'; //Remove if using below crap
+        font-size: @glitch-fontSizeXxl;
     }
+}
+
+.single .gl1tch--text:after {
+    font-size: @glitch-fontSizeXl;
 }
 
 /* This crap didn't totally work, but I'm leaving it just in case I try to fix it 

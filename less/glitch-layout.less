@@ -1,11 +1,8 @@
 body {
     background-color: @glitch-lightColor;
     color: @glitch-darkColor;
-}
-
-body.glitch_darkMode {
-    background-color: @glitch-darkColor;
-    color: @glitch-lightColor;
+    transition: background-color .5s ease-in-out,
+                color .5s ease-in-out;
 }
 
 .glitch_container {
@@ -28,4 +25,20 @@ body.glitch_darkMode {
 
 .glitch_column--full {
     flex-basis: 100%;
+}
+
+//Add spacing to objects
+.margin_vertMd {
+    margin-top: @glitch-spaceMd;
+    margin-bottom: @glitch-spaceMd;
+}
+
+.margin_vertLg {
+    margin-top: @glitch-spaceLg;
+    margin-bottom: @glitch-spaceLg;
+}
+
+.margin_vertXl {
+    margin-top: @glitch-spaceXl;
+    margin-bottom: @glitch-spaceXl;
 }

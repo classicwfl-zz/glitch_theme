@@ -1,0 +1,67 @@
+/* This contains all the various parts needed for a dark mode switch */
+
+body.d4rkm0d3 {
+    color: @glitch-lightColor;
+    background-color: @glitch-darkColor;
+}
+
+.d4rkm0d3 a {
+    -webkit-box-shadow: inset 0px 0px 0px 0px @glitch-lightColor;
+    -moz-box-shadow: inset 0px 0px 0px 0px @glitch-lightColor;
+    box-shadow: inset 0px 0px 0px 0px @glitch-lightColor;
+
+    &:hover {
+        -webkit-box-shadow: inset 0px -300px 0px 0px @glitch-lightColor;
+        -moz-box-shadow: inset 0px -300px 0px 0px @glitch-lightColor;
+        box-shadow: inset 0px -300px 0px 0px @glitch-lightColor;
+    }
+}
+
+.d4rkm0d3 .btn {
+    border: 4px solid @glitch-lightColor;
+    color: @glitch-lightColor;
+
+    &:hover {
+        background-color: @glitch-lightColor;
+        color: @glitch-darkColor;
+    }
+}
+
+.d4rkm0d3 .glitch_footerLogoPillar {
+    background-color: @glitch-lightColor;
+}
+
+.d4rkm0d3 .glitch_navButton {
+    background-color: @glitch-darkColor;
+
+    & > div {
+        background-color: @glitch-lightColor;
+    }
+
+    &.glitch_navButton--active {
+        background-color: @glitch-lightColor;
+        & > div {
+            background-color: @glitch-darkColor;
+        }
+    }
+}
+
+.d4rkm0d3 .glitch_featureBox {
+    border: 4px solid @glitch-lightColor;
+}
+
+// Nav container
+.d4rkm0d3 .glitch_navContainer {
+    background-color: @glitch-darkColor;
+}
+
+//Post stuff
+.d4rkm0d3 .glitch_metaInfo {
+    background-color: @glitch-darkColor;
+}
+
+.d4rkm0d3 .glitch_postHead {
+    & h1 {
+        background-color: @glitch-darkColor;
+    }
+}

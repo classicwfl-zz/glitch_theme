@@ -70,6 +70,7 @@ a {
 .glitch_termType {
     font-family: @glitch-monospaceType;
     letter-spacing: -.05em;
+    word-break: break-all;
 }
 
 .glitch_massiveType {
@@ -92,4 +93,32 @@ a {
 
 .center {
     text-align: center;
+}
+
+//Button Styles
+
+.btn {
+    border: 4px solid @glitch-darkColor;
+    display: inline-block;
+    padding: @glitch-spaceMd @glitch-spaceLg;
+    margin-right: @glitch-spaceMd;
+    margin-bottom: @glitch-spaceMd;
+    color: @glitch-darkColor;
+    text-transform: uppercase;
+    box-shadow: none;
+
+    &:hover {
+        box-shadow: none;
+        background-color: @glitch-darkColor;
+        color: @glitch-lightColor;
+        animation: gl1tchAnimShadowSmall 2s;
+    }
+}
+
+.btn-primary {
+    background-color: @glitch-primaryColor;
+}
+
+.btn-secondary {
+    background-color: @glitch-secondaryColor;
 }

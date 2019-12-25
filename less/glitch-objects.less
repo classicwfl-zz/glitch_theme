@@ -101,3 +101,47 @@
     margin-top: 0;
     margin-bottom: auto;
 }
+
+//Post Stuff
+
+.glitch_postHead {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 80vh;
+    min-height: 300px;
+    padding-top: @glitch-spaceXl;
+
+    & h1 {
+        background-color: @glitch-lightColor;
+        display: inline;
+        line-height: 1.6;
+        font-size: @glitch-fontSizeXl;
+    }
+}
+
+.glitch_metaInfo {
+    background-color: @glitch-lightColor;
+    padding: @glitch-spaceLg;
+    width: 33%;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: @glitch-spaceXl;
+    font-family: @glitch-monospaceType;
+    text-align: right;
+    font-size: @glitch-fontSizeSm;
+
+    @media (max-width: @glitch-smBreakpoint) {
+        width: 50%;
+    }
+
+    h3 {
+        font-size: inherit;
+        font-family: inherit;
+    }
+
+    p {
+        margin-bottom: 0;
+        margin-top: @glitch-spaceLg;
+    }
+}

@@ -8,6 +8,7 @@
         </div>
         <div id="copyright">
             <p>&copy; 2020 Will Leffert, Some Rights Reserved.</p>
+            <p>This theme I've build is open-source. <a href="https://github.com/classicwfl/glitch_theme/">Get it on my Github</a>.</p>
         </div>
     </div>
 

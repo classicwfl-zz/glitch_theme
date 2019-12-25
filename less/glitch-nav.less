@@ -57,3 +57,96 @@
 .admin-bar .glitch_navButton {
     top: 42px;
 }
+
+.glitch_navContainer {
+    position: fixed;
+    //top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    //padding: @glitch-spaceXxl 60px @glitch-spaceXxl @glitch-spaceXl;
+    background-color: @glitch-lightColor;
+    font-family: @glitch-monospaceType;
+    text-transform: lowercase;
+    line-height: 1.3;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    //transition: all .2s ease-in-out;
+    padding-left: @glitch-spaceLg;
+    padding-right: 60px;
+
+    &.glitch_navContainer--active {
+        padding: @glitch-spaceXxl 60px @glitch-spaceXxl @glitch-spaceLg;
+        top: 0;
+        height: auto;
+        overflow: auto;
+        opacity: 1;
+    }
+
+    & h2 {
+        padding-left: 0;
+    }
+
+    & p {
+        margin-bottom: 0;
+    }
+
+    & ul {
+        padding-bottom: @glitch-spaceXl;
+
+        & li {
+            display: inline-block;
+            margin-right: @glitch-spaceLg;
+            word-break: break-all;
+            min-width: 200px;
+        }
+    }
+
+    & a {
+        color: @glitch-primaryColor;
+    }
+}
+
+// Dark Mode Toggle
+.glitch_darkModeToggle {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: @glitch-lightColor;
+    color: @glitch-darkColor;
+    z-index: 9999;
+    border: 2px solid @glitch-darkColor;
+    margin:0;
+    padding: 0;
+    transition: all .2s ease-in-out;
+    font-size: @glitch-fontSizeLg;
+    line-height: 1;
+    font-size: 0;
+    -webkit-box-shadow: inset -10px 0px 0px 0px @glitch-darkColor;
+    -moz-box-shadow: inset -10px 0px 0px 0px @glitch-darkColor;
+    box-shadow: inset -10px 0px 0px 0px @glitch-darkColor;
+
+    &:hover {
+        -webkit-box-shadow: inset -20px 0px 0px 0px @glitch-darkColor;
+        -moz-box-shadow: inset -20px 0px 0px 0px @glitch-darkColor;
+        box-shadow: inset -20px 0px 0px 0px @glitch-darkColor;
+    }
+}
+
+.d4rkm0d3 .glitch_darkModeToggle {
+    -webkit-box-shadow: inset -30px 0px 0px 0px @glitch-darkColor;
+    -moz-box-shadow: inset -30px 0px 0px 0px @glitch-darkColor;
+    box-shadow: inset -30px 0px 0px 0px @glitch-darkColor;
+
+    &:hover {
+        -webkit-box-shadow: inset -20px 0px 0px 0px @glitch-darkColor;
+        -moz-box-shadow: inset -20px 0px 0px 0px @glitch-darkColor;
+        box-shadow: inset -20px 0px 0px 0px @glitch-darkColor;
+    }
+
+    border: 2px solid @glitch-lightColor;
+}
