@@ -3,6 +3,7 @@
 <?php
 
     global $glitch_pageType;
+    $glitch_postType = get_post_type();
 
     if(!isset($_COOKIE["darkmode"])){
         $cookie_name = "darkmode";
@@ -71,7 +72,7 @@
         ?>
         </ul>
 
-        <p>./<a href="/art-portfolio/">art</a>:</p>
+        <p>./<a href="/art-portfolio/">art-portfolio</a>:</p>
         <!-- Latest Art -->
         <ul>
         <?php 
@@ -140,19 +141,73 @@
 
     <div id="wrapper" class="hfeed">
         <header id="header">
-            <h2 class="glitch_termType glitch_termHead">guest@classicwfl.com:<a href="/">~</a><?php
+            <h2 class="glitch_termType glitch_termHead">guest@classicwfl.com:<a href="<?php echo get_site_url(); ?>">~</a><?php
         
-                if ( is_single() || $glitch_pageType == "articles" ) {
-                    echo '/<a href="/articles">articles</a>';
+                if ( is_single()) {
+                    
+                    switch ($glitch_postType) {
+                        case "articles":
+                            echo '/<a href="' . get_site_url() . '/articles">articles</a>';
+                        break;
+                        case "portfolio":
+                            echo '/<a href="' . get_site_url() . '/art-portfolio">art-portfolio</a>';
+                        break;
+                        case "photography":
+                            echo '/<a href="' . get_site_url() . '/photography-by-wfl">photography</a>';
+                        break;
+                        case "records":
+                            echo '/<a href="' . get_site_url() . '/records">records</a>';
+                        break;
+                        case "merch":
+                            echo '/<a href="' . get_site_url() . '/merchandise">merch</a>';
+                        break;
+                        case "video":
+                            echo '/<a href="' . get_site_url() . '/video">video</a>';
+                        break;
+                    }
+                    
+                } elseif ( $glitch_pageType == "portfolio" ) {
+                    echo '/<a href="' . get_site_url() . '/art-portfolio">art-portfolio</a>';
+                } elseif ( $glitch_pageType == "photography" ) {
+                        echo '/<a href="' . get_site_url() . '/photography-by-wfl">photography</a>';
+                } elseif ( $glitch_pageType == "merch" ) {
+                    echo '/<a href="' . get_site_url() . '/merchandise">merch</a>';
+                } elseif ( $glitch_pageType == "records" ) {
+                    echo '/<a href="' . get_site_url() . '/records">music</a>';
+                } elseif ( $glitch_pageType == "articles" ) {
+                    echo '/<a href="' . get_site_url() . '/articles">articles</a>';
                 }
             
             ?>$ <?php
         
                 if (is_single()) {
                     $term_title = glitch_convertToTermType(get_the_title());
-                    echo 'glitchRenderDoc ' . $term_title . '</a>.odf';
+                    echo 'glitchRender ' . $term_title . '</a>';
+
+                    switch ($glitch_postType) {
+                        case "post":
+                            echo '.odf';
+                        break;
+                        case "portfolio":
+                            echo '.jpg';
+                        break;
+                        case "photography":
+                            echo '.jpg';
+                        break;
+                        case "records":
+                            echo '.ogg';
+                        break;
+                        case "merch":
+                            echo '.pdf';
+                        break;
+                        case "video":
+                            echo '.mp4';
+                        break;
+                    }
                 } elseif ( $glitch_pageType == "articles" ) { 
                     echo 'ls -l | less';
+                } elseif ( $glitch_pageType == "portfolio" || $glitch_pageType == "photography" || $glitch_pageType == "merch" || $glitch_pageType == "records" ) {
+                    echo 'ls -l | glitchRenderImages';
                 } else {
                     echo './intro.sh';
                 }

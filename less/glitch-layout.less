@@ -76,6 +76,40 @@ body {
     }
 }
 
+//Image List Stuff
+.glitch_imageListItem {
+    display: block;
+    flex-basis: 47%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    margin-bottom: @glitch-spaceLg;
+    padding-top: @glitch-spaceMd;
+    color: @glitch-darkColor;
+
+    @media (max-width: @glitch-mdBreakpoint) {
+        flex-basis: 100%;
+    }
+
+    @media (max-width: @glitch-smBreakpoint) {
+        min-height: 250px;
+    }
+
+    &:hover {
+        box-shadow: none;
+        background-color: @glitch-darkColor;
+        color: @glitch-lightColor;
+        animation: gl1tchAnimShadowSmall 2s;
+        color: inherit;
+    }
+}
+
+.glitch_imageListTitle {
+    background-color: @glitch-lightColor;
+    display: inline-block;
+}
+
 //Pagination
 .posts-navigation {
     margin-top: @glitch-spaceXxl;
