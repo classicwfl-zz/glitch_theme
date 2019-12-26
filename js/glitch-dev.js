@@ -38,44 +38,46 @@ function addGlitchRadiusHomeArt() {
 }
 
 function addGlitchHeadlineSpan() {
-    var headText = jQuery("h1").text();
-    var splitText = headText.split("");
-    var textLength = splitText.length;
-    var textIndex = Math.floor(Math.random() * textLength);
-    var glitchChar = splitText[textIndex].toLowerCase();
-    var glitchCharSelector = glitchChar;
-    
-    switch (glitchChar) {
-        case " ":
-            glitchCharSelector = "spacechar";
-            break;
-        case "&":
-            glitchCharSelector = "ampchar";
-            break;
-        case ";":
-            glitchCharSelector = "semicolonchar";
-            break;
-        case ":":
-            glitchCharSelector = "colonchar";
-            break;
-        case "!":
-            glitchCharSelector = "exclaimchar";
-            break;
-        case ".":
-            glitchCharSelector = "periodchar";
-            break;
-        case '"':
-            glitchCharSelector = "dblquotechar";
-            break;
-        case "\'":
-            glitchCharSelector = "quotechar";
-            break;
+    if (jQuery("h1").length) {
+        var headText = jQuery("h1").text();
+        var splitText = headText.split("");
+        var textLength = splitText.length;
+        var textIndex = Math.floor(Math.random() * textLength);
+        var glitchChar = splitText[textIndex].toLowerCase();
+        var glitchCharSelector = glitchChar;
+        
+        switch (glitchChar) {
+            case " ":
+                glitchCharSelector = "spacechar";
+                break;
+            case "&":
+                glitchCharSelector = "ampchar";
+                break;
+            case ";":
+                glitchCharSelector = "semicolonchar";
+                break;
+            case ":":
+                glitchCharSelector = "colonchar";
+                break;
+            case "!":
+                glitchCharSelector = "exclaimchar";
+                break;
+            case ".":
+                glitchCharSelector = "periodchar";
+                break;
+            case '"':
+                glitchCharSelector = "dblquotechar";
+                break;
+            case "\'":
+                glitchCharSelector = "quotechar";
+                break;
+        }
+
+        splitText[textIndex] = '<span class="gl1tch ' + glitchCharSelector + '">' + splitText[textIndex] + "</span>";
+        var finalText = splitText.join("");
+
+        jQuery("h1").html(finalText);
     }
-
-    splitText[textIndex] = '<span class="gl1tch ' + glitchCharSelector + '">' + splitText[textIndex] + "</span>";
-    var finalText = splitText.join("");
-
-    jQuery("h1").html(finalText);
 }
 
 function glitchHeadline() {

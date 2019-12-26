@@ -42,3 +42,51 @@ body {
     margin-top: @glitch-spaceXl;
     margin-bottom: @glitch-spaceXl;
 }
+
+//Misc page settings
+.glitch_pageHead {
+    padding: 16px 50px 16px 16px;
+}
+
+//Post List Stuff
+.glitch_postListItem {
+    padding-bottom: @glitch-spaceXl;
+    clear: both;
+}
+
+.glitch_postListTitle {
+    float: left;
+    min-width: 290px;
+    width: 70%;
+
+    @media (max-width: @glitch-smBreakpoint) {
+        width: 100%;
+        float: none;
+    }
+}
+
+.glitch_postListDate {
+    float: right;
+    min-width: 110px;
+    width: 30%;
+    text-align: right;
+    @media (max-width: @glitch-smBreakpoint) {
+        width: 100%;
+        float: none;
+    }
+}
+
+//Pagination
+.posts-navigation {
+    margin-top: @glitch-spaceXxl;
+
+    & .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        & .nav-next {
+            text-align: left;
+        }
+    }
+}

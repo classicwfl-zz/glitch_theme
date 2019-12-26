@@ -2,10 +2,12 @@
 
 <?php
 
+    global $glitch_pageType;
+
     if(!isset($_COOKIE["darkmode"])){
         $cookie_name = "darkmode";
         $cookie_value = "0";
-        setcookie($cookie_name, $cookie_value, time() + (86400 * 365), "/"); // 86400 = 1 day
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 365), "/", "localhost:5010"); // 86400 = 1 day
     }
 
     if ($_COOKIE["darkmode"]) {
@@ -38,11 +40,7 @@
         while ($latest_posts -> have_posts()) : $latest_posts -> the_post(); ?>
         
         <li><a href="<?php the_permalink() ?>"><?php 
-            $post_title = get_the_title();
-            $post_title = str_replace(" ", "_", $post_title);
-            $post_title = str_replace(".", "_", $post_title);
-            $post_title = str_replace(",", "", $post_title);
-            $post_title = str_replace("'", "", $post_title);
+            $post_title = glitch_convertToTermType(get_the_title());
             echo $post_title;
         ?></a>.odf</li>
         <?php 
@@ -64,11 +62,7 @@
         while ($latest_photo -> have_posts()) : $latest_photo -> the_post(); ?>
         
         <li><a href="<?php the_permalink() ?>"><?php 
-            $post_title = get_the_title();
-            $post_title = str_replace(" ", "_", $post_title);
-            $post_title = str_replace(".", "_", $post_title);
-            $post_title = str_replace(",", "", $post_title);
-            $post_title = str_replace("'", "", $post_title);
+            $post_title = glitch_convertToTermType(get_the_title());
             echo $post_title;
         ?></a>.jpg</li>
         <?php 
@@ -90,11 +84,7 @@
         while ($latest_photo -> have_posts()) : $latest_photo -> the_post(); ?>
         
         <li><a href="<?php the_permalink() ?>"><?php 
-            $post_title = get_the_title();
-            $post_title = str_replace(" ", "_", $post_title);
-            $post_title = str_replace(".", "_", $post_title);
-            $post_title = str_replace(",", "", $post_title);
-            $post_title = str_replace("'", "", $post_title);
+            $post_title = glitch_convertToTermType(get_the_title());
             echo $post_title;
         ?></a>.jpg</li>
         <?php 
@@ -116,11 +106,7 @@
         while ($latest_photo -> have_posts()) : $latest_photo -> the_post(); ?>
         
         <li><a href="<?php the_permalink() ?>"><?php 
-            $post_title = get_the_title();
-            $post_title = str_replace(" ", "_", $post_title);
-            $post_title = str_replace(".", "_", $post_title);
-            $post_title = str_replace(",", "", $post_title);
-            $post_title = str_replace("'", "", $post_title);
+            $post_title = glitch_convertToTermType(get_the_title());
             echo $post_title;
         ?></a>.ogg</li>
         <?php 
@@ -142,11 +128,7 @@
         while ($latest_photo -> have_posts()) : $latest_photo -> the_post(); ?>
         
         <li><a href="<?php the_permalink() ?>"><?php 
-            $post_title = get_the_title();
-            $post_title = str_replace(" ", "_", $post_title);
-            $post_title = str_replace(".", "_", $post_title);
-            $post_title = str_replace(",", "", $post_title);
-            $post_title = str_replace("'", "", $post_title);
+            $post_title = glitch_convertToTermType(get_the_title());
             echo $post_title;
         ?></a>.pdf</li>
         <?php 
@@ -160,19 +142,17 @@
         <header id="header">
             <h2 class="glitch_termType glitch_termHead">guest@classicwfl.com:<a href="/">~</a><?php
         
-                if (is_single()) {
+                if ( is_single() || $glitch_pageType == "articles" ) {
                     echo '/<a href="/articles">articles</a>';
                 }
             
             ?>$ <?php
         
                 if (is_single()) {
-                    $term_title = get_the_title();
-                    $term_title = str_replace(" ", "_", $term_title);
-                    $term_title = str_replace(".", "_", $term_title);
-                    $term_title = str_replace(",", "", $term_title);
-                    $term_title = str_replace("'", "", $term_title);
-                    echo 'less ' . $term_title . '</a>.odf';
+                    $term_title = glitch_convertToTermType(get_the_title());
+                    echo 'glitchRenderDoc ' . $term_title . '</a>.odf';
+                } elseif ( $glitch_pageType == "articles" ) { 
+                    echo 'ls -l | less';
                 } else {
                     echo './intro.sh';
                 }
