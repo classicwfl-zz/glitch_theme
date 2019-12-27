@@ -3,6 +3,7 @@
 <?php
 
     global $glitch_pageType;
+    global $glitch_category;
     $glitch_postType = get_post_type();
 
     if(!isset($_COOKIE["darkmode"])){
@@ -146,9 +147,6 @@
                 if ( is_single()) {
                     
                     switch ($glitch_postType) {
-                        case "articles":
-                            echo '/<a href="' . get_site_url() . '/articles">articles</a>';
-                        break;
                         case "portfolio":
                             echo '/<a href="' . get_site_url() . '/art-portfolio">art-portfolio</a>';
                         break;
@@ -161,8 +159,8 @@
                         case "merch":
                             echo '/<a href="' . get_site_url() . '/merchandise">merch</a>';
                         break;
-                        case "video":
-                            echo '/<a href="' . get_site_url() . '/video">video</a>';
+                        default:
+                            echo '/<a href="' . get_site_url() . '/articles">articles</a>'; //catch all to articles
                         break;
                     }
                     
@@ -175,7 +173,15 @@
                 } elseif ( $glitch_pageType == "records" ) {
                     echo '/<a href="' . get_site_url() . '/records">music</a>';
                 } elseif ( $glitch_pageType == "articles" ) {
+                    if ($glitch_category) {
+                        $category_id = get_cat_ID( $glitch_category );
+                        $category_link = get_category_link( $category_id );
+                        echo '/<a href="' . get_site_url() . '/articles">articles</a>/<a href="' . $category_link . '">' . glitch_convertToTermType($glitch_category) . '</a>';
+                    } else {
                     echo '/<a href="' . get_site_url() . '/articles">articles</a>';
+                    }
+                } elseif ( $glitch_pageType =="page" ) {
+                    echo '/<a href="' . get_page_link() . '">' . get_the_title() . '</a>';
                 }
             
             ?>$ <?php
@@ -208,6 +214,8 @@
                     echo 'ls -l | less';
                 } elseif ( $glitch_pageType == "portfolio" || $glitch_pageType == "photography" || $glitch_pageType == "merch" || $glitch_pageType == "records" ) {
                     echo 'ls -l | glitchRenderImages';
+                } elseif ( $glitch_pageType =="page" ) {
+                    echo 'glitchrender page';
                 } else {
                     echo './intro.sh';
                 }

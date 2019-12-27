@@ -32,6 +32,12 @@
         </header>
         <div class="glitch_column">
             <?php 
+
+                $video_url = get_field("video_url");
+                if ($video_url) {
+                    ?><div class="ytvideo"><?php echo wp_oembed_get($video_url); ?></div><?php
+                }
+
                 $content = apply_filters( 'the_content', get_the_content() );
                 echo $content;
             ?>

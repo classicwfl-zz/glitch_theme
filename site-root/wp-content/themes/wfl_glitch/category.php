@@ -1,15 +1,25 @@
-<?php get_header(); ?>
+<?php 
+    $glitch_pageType = "articles"; 
+    $glitch_category = single_cat_title("", false);
+    get_header(); 
+?>
 <main id="content">
-    <div class="glitch_container">
+    <div class="glitch_pageHead">
         <header class="header">
-            <h1 class="entry-title"><?php single_term_title(); ?></h1>
-            <div class="archive-meta"><?php if ( '' != the_archive_description() ) { echo esc_html( the_archive_description() ); } ?></div>
+            <h1 class="entry-title">Articles</h1>
         </header>
     </div>
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        <h2><a href="<?php echo esc_url(get_permalink()) ?>"><?php echo get_the_title(); ?></a> TEST</h2>
-    <?php endwhile; endif; ?>
-    <?php get_template_part( 'nav', 'below' ); ?>
+    <div class="glitch_container">
+        <div class="glitch_column--full">
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <div class="glitch_postListItem">
+                <div class="glitch_postListTitle"><h2 class="glitch_termType fontSize_md fontWeight_norm font_lowercase"><a href="<?php echo esc_url(get_permalink()) ?>"><?php echo glitch_convertToTermType(get_the_title()); ?></a>.odf</h2></div>
+                <div class="glitch_postListDate"><span class="glitch_tabOver glitch_termType"><?php the_date() ?></span></div>
+            </div>
+        <?php endwhile; endif; ?>
+        <?php get_template_part( 'nav', 'below' ); ?>
+        </div>
+    </div>
+
 </main>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

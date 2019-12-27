@@ -111,9 +111,9 @@ function glitch_toggleNav() {
 function darkModeSwitch() {
     if (jQuery("body").hasClass("d4rkm0d3")) {
         jQuery("body").removeClass("d4rkm0d3");
-        document.cookie = "darkmode=0";
+        document.cookie = "darkmode=0;path=/";
     } else {
         jQuery("body").addClass("d4rkm0d3");
-        document.cookie = "darkmode=1";
+        document.cookie = "darkmode=1;path=/";
     }
 }
