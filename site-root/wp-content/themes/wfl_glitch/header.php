@@ -156,7 +156,7 @@
                             echo '/<a href="' . get_site_url() . '/photography-by-wfl">photography</a>';
                         break;
                         case "records":
-                            echo '/<a href="' . get_site_url() . '/records">records</a>';
+                            echo '/<a href="' . get_site_url() . '/records">music</a>';
                         break;
                         case "merch":
                             echo '/<a href="' . get_site_url() . '/merchandise">merch</a>';
