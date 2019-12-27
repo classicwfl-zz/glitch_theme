@@ -4,12 +4,18 @@ jQuery( document ).ready(function() {
         glitchRadiusTimer = setInterval(function(){setTimeout(addGlitchRadiusHomeArt,genTimer(4000))},1000);
     }
 
-    addGlitchHeadlineSpan();
-    glitchTextTimer = setInterval(function(){setTimeout(glitchHeadline,genTimer(5000))},2000);
+    if (!jQuery("body").hasClass("page-template-web-art-template-page")) {
+        addGlitchHeadlineSpan();
+        document.getElementById("glitch_toggleDarkMode").addEventListener("click", darkModeSwitch, false);
+        glitchTextTimer = setInterval(function(){setTimeout(glitchHeadline,genTimer(5000))},2000);
+    }
+    
+    
+    
 
     document.getElementById("glitch_toggleNav").addEventListener("click", glitch_toggleNav, false);
 
-    document.getElementById("glitch_toggleDarkMode").addEventListener("click", darkModeSwitch, false);
+    
 });
 
 function addGlitchHomeArt() {

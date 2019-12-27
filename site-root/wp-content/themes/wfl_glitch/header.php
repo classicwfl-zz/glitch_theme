@@ -140,8 +140,10 @@
         </ul>
     </div>
 
+    
     <div id="wrapper" class="hfeed">
         <header id="header">
+        <?php if ($glitch_pageType !== "webart") { ?>
             <h2 class="glitch_termType glitch_termHead">guest@classicwfl.com:<a href="<?php echo get_site_url(); ?>">~</a><?php
         
                 if ( is_single()) {
@@ -222,11 +224,16 @@
             
             ?></h2>
 
+            <?php } //closing webart conditional ?>
+
             <button id="glitch_toggleNav" class="glitch_navButton">
                 <div></div>
                 <div></div>
                 <div></div>
             </button>
+
+            <?php if ($glitch_pageType !== "webart") { ?>
             <button id="glitch_toggleDarkMode" class="glitch_darkModeToggle">Switch Color Mode</button>
+            <?php } ?>
         </header>
         <div id="container">
