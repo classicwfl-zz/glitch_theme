@@ -5,34 +5,47 @@
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <div class="glitch_container">
-        <header class="glitch_column glitch_postHead<?php 
-            if ( has_post_thumbnail() ) {
-                ?>" style="background-image: url('<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>');"<?php
-            } else {
-                echo ' glitch_noPhoto"';
-            }
-        ?>>
+        <header class="glitch_column--full">
             <h1><?php the_title(); ?></h1>
+        </header>
+    </div>
 
-            <div class="glitch_metaInfo">
-                <h3>Categories:</h3>
-                <ul>
+    <div class="glitch_container">
+        <div class="glitch_column">
+            <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" class="glitch_respImg" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+        </div>
+
+        <div class="glitch_column">
+
                 <?php
-                $categories = wp_get_post_categories( get_the_ID() );
-                foreach($categories as $c){
-                    $cat = get_category( $c );
-                    //get the name of the category
-                    $cat_id = get_cat_ID( $cat->name );
-                    //make a list item containing a link to the category
-                    echo '<li><a href="'.get_category_link($cat_id).'">'.$cat->name.'</a></li>';
+                $terms = get_the_terms( get_the_ID(), 'medium' );
+                         
+                if ( $terms && ! is_wp_error( $terms ) ) : 
+                 
+                    $medium_links = array();
+                 
+                    foreach ( $terms as $term ) {
+                        $medium_links[] = $term->name;
+                    }
+                                         
+                    $medium = join( ", ", $medium_links );
+                    ?>
+                 
+                    <h3 class="glitch_termType fontSize_md">
+                        Medium: <?php printf( esc_html__( '%s', 'textdomain' ), esc_html( $medium ) ); ?>
+                    </h3>
+                <?php endif; ?>
+            
+
+                <p class="glitch_termType fontSize_md">Date: <?php echo get_the_date(); ?></p>
+
+                <?php 
+                $print_url = get_field("print_url");
+
+                if (get_field("has_prints")) {
+                    echo '<a href="' . $print_url . '" class="btn btn-primary">Get Prints</a>';
                 }
                 ?>
-                </ul>
-
-                <p>Date: <?php echo get_the_date(); ?></p>
-            </div>
-        </header>
-        <div class="glitch_column">
             <?php 
                 $content = apply_filters( 'the_content', get_the_content() );
                 echo $content;
