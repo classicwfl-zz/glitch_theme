@@ -18,12 +18,12 @@ body.d4rkm0d3 {
 }
 
 .d4rkm0d3 .btn, .d4rkm0d3 .posts-navigation .nav-links a, .d4rkm0d3 .post-navigation .nav-links a {
-    border: 4px solid @glitch-lightColor;
-    color: @glitch-lightColor;
+    border: 4px solid @glitch-lightColor  !important;
+    color: @glitch-lightColor  !important;
 
     &:hover {
-        background-color: @glitch-lightColor;
-        color: @glitch-darkColor;
+        background-color: @glitch-lightColor  !important;
+        color: @glitch-darkColor  !important;
     }
 }
 
@@ -80,4 +80,12 @@ body.d4rkm0d3 {
 
 .d4rkm0d3 .wp-block-quote {
     border-left: 4px solid @glitch-lightColor;
+}
+
+//Forms
+.d4rkm0d3 .glitch_contactForm {
+    & input, textarea {
+        border: 2px solid @glitch-lightColor !important;
+        color: @glitch-lightColor !important;
+    }
 }

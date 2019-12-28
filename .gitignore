@@ -110,6 +110,7 @@ site-root/wp-includes/
 site-root/wp-content/*
 !site-root/wp-content/themes/
 site-root/wp-content/plugins/
+site-root/wp-content/plugins/*
 site-root/wp-content/uploads/
 site-root/wp-content/themes/*
 

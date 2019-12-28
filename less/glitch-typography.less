@@ -4,32 +4,56 @@ body {
     color: @glitch-darkColor;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: @glitch-headlineType;
+    letter-spacing: -.05em;
+}
+
 h1  {
     font-weight: @glitch-fontHeavy;
     font-size: @glitch-fontSizeXxl;
     text-transform: uppercase;
+    @media (max-width: @glitch-mdBreakpoint) {
+        font-size: @glitch-fontSizeXl;
+    }
 }
 
 h2 {
     font-weight: @glitch-fontHeavy;
     font-size: @glitch-fontSizeXl;
     text-transform: uppercase;
+    @media (max-width: @glitch-mdBreakpoint) {
+        font-size: @glitch-fontSizeLg;
+    }
 }
 
 h3 {
     font-weight: @glitch-fontNorm;
     font-size: @glitch-fontSizeXl;
+    text-transform: uppercase;
+    @media (max-width: @glitch-mdBreakpoint) {
+        font-size: @glitch-fontSizeLg;
+    }
 }
 
 h4 {
     font-weight: @glitch-fontHeavy;
     font-size: @glitch-fontSizeLg;
     text-transform: uppercase;
+    margin-bottom: @glitch-spaceMd;
+    @media (max-width: @glitch-mdBreakpoint) {
+        font-size: @glitch-fontSizeMd;
+    }
 }
 
 h5 {
     font-weight: @glitch-fontLight;
     font-size: @glitch-fontSizeLg;
+    margin-bottom: @glitch-spaceMd;
+    letter-spacing: 0;
+    @media (max-width: @glitch-mdBreakpoint) {
+        font-size: @glitch-fontSizeMd;
+    }
 }
 
 h6 {
@@ -37,10 +61,7 @@ h6 {
     font-size: @glitch-fontSizeMd;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: @glitch-headlineType;
-    letter-spacing: -.05em;
-}
+
 
 .fontSize_sm {font-size: @glitch-fontSizeSm;}
 .fontSize_md {font-size: @glitch-fontSizeMd;}
@@ -93,6 +114,10 @@ a {
     @media (max-width: @glitch-mdBreakpoint) {
         font-size: @glitch-fontSizeXxl;
     }
+
+    @media (max-width: @glitch-smBreakpoint) {
+        font-size: @glitch-fontSizeXl;
+    }
 }
 
 .glitch_primaryHighlight {
@@ -113,27 +138,28 @@ a {
 //Button Styles
 
 .btn, .posts-navigation .nav-links a, .post-navigation .nav-links a {
-    border: 4px solid @glitch-darkColor;
+    border: 4px solid @glitch-darkColor !important;
     display: inline-block;
-    padding: @glitch-spaceMd @glitch-spaceLg;
+    padding: @glitch-spaceMd @glitch-spaceLg !important;
     margin-right: @glitch-spaceMd;
     margin-bottom: @glitch-spaceMd;
-    color: @glitch-darkColor;
-    text-transform: uppercase;
+    color: @glitch-darkColor !important;
+    text-transform: uppercase !important;
     box-shadow: none;
+    background-color: transparent  !important;
 
     &:hover {
         box-shadow: none;
-        background-color: @glitch-darkColor;
-        color: @glitch-lightColor;
-        animation: gl1tchAnimShadowSmall 2s;
+        background-color: @glitch-darkColor !important;
+        color: @glitch-lightColor !important;
+        animation: gl1tchAnimShadowSmall 2s !important;
     }
 }
 
 .btn-primary {
-    background-color: @glitch-primaryColor;
+    background-color: @glitch-primaryColor !important;
 }
 
 .btn-secondary {
-    background-color: @glitch-secondaryColor;
+    background-color: @glitch-secondaryColor !important;
 }
