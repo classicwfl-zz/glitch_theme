@@ -51,7 +51,7 @@
         ?>
         </ul>
 
-        <p>./<a href="/photography-by-wfl/">photography</a>:</p>
+        <p>./<a href="<?php get_site_url(); ?>/photography-by-wfl/">photography</a>:</p>
         <!-- Latest Photo -->
         <ul>
         <?php 
@@ -73,7 +73,7 @@
         ?>
         </ul>
 
-        <p>./<a href="/art-portfolio/">art-portfolio</a>:</p>
+        <p>./<a href="<?php get_site_url(); ?>/art-portfolio/">art-portfolio</a>:</p>
         <!-- Latest Art -->
         <ul>
         <?php 
@@ -95,7 +95,7 @@
         ?>
         </ul>
 
-        <p>./<a href="/records/">music</a>:</p>
+        <p>./<a href="<?php get_site_url(); ?>/records/">music</a>:</p>
         <!-- Latest Record -->
         <ul>
         <?php 
@@ -117,7 +117,7 @@
         ?>
         </ul>
 
-        <p>./<a href="/merchandise/">merch</a>:</p>
+        <p>./<a href="<?php get_site_url(); ?>/merchandise/">merch</a>:</p>
         <!-- Latest Merch -->
         <ul>
         <?php 
@@ -183,7 +183,7 @@
                     echo '/<a href="' . get_site_url() . '/articles">articles</a>';
                     }
                 } elseif ( $glitch_pageType =="page" ) {
-                    echo '/<a href="' . get_page_link() . '">' . get_the_title() . '</a>';
+                    echo '/<a href="' . get_page_link() . '">' . glitch_convertToTermType(get_the_title()) . '</a>';
                 }
             
             ?>$ <?php
