@@ -1,4 +1,6 @@
 <?php
+
+//This does basic string replacement to remove a few special characters/spaces; while I could remove more, I still wnat the title to be readable.
 function glitch_convertToTermType($text) {
     $text = str_replace(" ", "_", $text);
     $text = str_replace(".", "_", $text);
@@ -22,7 +24,7 @@ add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts() {
     wp_enqueue_style( 'blankslate-style', get_stylesheet_uri() );
     wp_enqueue_style( 'wfl_glitch', get_template_directory_uri().'/dist/css/glitch.css' );
-    wp_enqueue_style( 'wfl_glitch_typekit', 'https://use.typekit.net/old8ala.css' );
+    wp_enqueue_style( 'wfl_glitch_typekit', 'https://use.typekit.net/old8ala.css' ); //Change this to your own Typekit or Google Fonts
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'glitch_main', get_template_directory_uri().'/dist/js/glitch.js' );
 }
@@ -54,6 +56,7 @@ function blankslate_footer_scripts() {
     });
 </script>
 <?php
+//If you didn't get this from me (https://github.com/classicwfl/glitch_theme), hopefully you didn't pay for it. If you did, let me know where you got it.
 }
 add_filter( 'document_title_separator', 'blankslate_document_title_separator' );
 function blankslate_document_title_separator( $sep ) {

@@ -52,6 +52,7 @@ function addGlitchHeadlineSpan() {
         var glitchChar = splitText[textIndex].toLowerCase();
         var glitchCharSelector = glitchChar;
         
+        //This isn't really used at the moment, but we're leaving it in just in case I do decide to use it. See glitch-glitches.less.
         switch (glitchChar) {
             case " ":
                 glitchCharSelector = "spacechar";

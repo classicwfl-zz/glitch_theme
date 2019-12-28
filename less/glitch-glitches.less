@@ -1,7 +1,7 @@
 /* Home-Specific Glitching */
-@glitch-pink: magenta;
-@glitch-yellow: yellow;
-@glitch-blue: cyan;
+@glitch-pink: magenta; // I'm A
+@glitch-yellow: yellow; // SUCKER FOR
+@glitch-blue: cyan; // CMYK.
 @glitch_shadowAnimDuration: 1s;
 
 .gl1tch.gl1tch--noRadius {
@@ -125,6 +125,29 @@
     }
     75% {
         box-shadow:-4px 2px 0 0 @glitch-yellow, 3px 5px 0 0 @glitch-pink, 4px -2px 0 0 @glitch-blue;
+    }
+    100% {
+        box-shadow:none;
+    }
+}
+
+//Inner hover glitch anim
+
+@keyframes gl1tchAnimShadowInset {
+    0% {
+        box-shadow:none;
+    }
+    20% {
+        box-shadow: inset 13px 12px 0 @glitch-yellow, inset 15px 14px 0 @glitch-pink;
+    }
+    50% {
+        box-shadow:inset 12px 5px 0 @glitch-yellow, inset 0px 0px 0 @glitch-pink, inset -15px 3px 0 @glitch-blue;
+    }
+    60% {
+        box-shadow:inset -3px -15px 0 @glitch-yellow, inset -5px -12px 0 @glitch-pink, inset 4px 14px 0 @glitch-blue;
+    }
+    75% {
+        box-shadow:inset -4px 12px 0 @glitch-yellow, inset 13px 5px 0 @glitch-pink, inset 4px -12px 0 @glitch-blue;
     }
     100% {
         box-shadow:none;
