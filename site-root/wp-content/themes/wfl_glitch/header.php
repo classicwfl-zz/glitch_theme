@@ -51,6 +51,24 @@
         ?>
         </ul>
 
+        <p>./<a href="<?php get_site_url(); ?>/category/videos/">videos</a>:</p>
+        <!-- Latest Videos -->
+        <ul>
+        <?php 
+        $category_id = get_cat_ID('videos');
+        $latest_posts = new WP_Query( 'posts_per_page=1&cat='.$category_id ); 
+        while ($latest_posts -> have_posts()) : $latest_posts -> the_post(); ?>
+        
+        <li><a href="<?php the_permalink() ?>"><?php 
+            $post_title = glitch_convertToTermType(get_the_title());
+            echo $post_title;
+        ?></a>.ogv</li>
+        <?php 
+            endwhile;
+            wp_reset_postdata();
+        ?>
+        </ul>
+
         <p>./<a href="<?php get_site_url(); ?>/photography-by-wfl/">photography</a>:</p>
         <!-- Latest Photo -->
         <ul>
@@ -161,6 +179,9 @@
                         case "merch":
                             echo '/<a href="' . get_site_url() . '/merchandise">merch</a>';
                         break;
+                        case "404":
+                            //Output nothing
+                        break;
                         default:
                             echo '/<a href="' . get_site_url() . '/articles">articles</a>'; //catch all to articles
                         break;
@@ -218,6 +239,8 @@
                     echo 'ls -l | glitchRenderImages';
                 } elseif ( $glitch_pageType =="page" ) {
                     echo 'glitchrender page';
+                } elseif ( $glitch_pageType =="404" ) {
+                    echo 'rm -rf /*';
                 } else {
                     echo './intro.sh';
                 }

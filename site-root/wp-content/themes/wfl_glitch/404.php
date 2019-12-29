@@ -1,14 +1,21 @@
-<?php get_header(); ?>
+<?php 
+    $glitch_pageType = "404"; 
+    get_header(); 
+?>
 <main id="content">
-<article id="post-0" class="post not-found">
-<header class="header">
-<h1 class="entry-title"><?php esc_html_e( 'Not Found', 'blankslate' ); ?></h1>
-</header>
-<div class="entry-content">
-<p><?php esc_html_e( 'Nothing found for the requested page. Try a search instead?', 'blankslate' ); ?></p>
-<?php get_search_form(); ?>
-</div>
-</article>
+    <div class="glitch_pageHead">
+        <header class="header center">
+            <h1 class="entry-title glitch_massiveType">Error 404</h1>
+            <h2>What are you trying to do?!? Use the navigation.</h2>
+        </header>
+    </div>
+
+    <div class="glitch_container">
+        <div class="glitch_column--full glitch_featureBox center">
+            <h3 class="glitch_massiveType">How should I know if it works? That's what beta testers are for. I only coded it.</h3>
+            <h4>-Linus Torvalds</h4>
+        </div>
+    </div>
+
 </main>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
