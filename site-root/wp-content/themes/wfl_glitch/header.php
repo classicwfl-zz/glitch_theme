@@ -70,7 +70,7 @@
         ?>
         </ul>
 
-        <p>./<a href="<?php get_site_url(); ?>/photography-by-wfl/">photography</a>:</p>
+        <p>./<a href="<?php echo get_site_url(); ?>/photography-by-wfl/">photography</a>:</p>
         <!-- Latest Photo -->
         <ul>
         <?php 
