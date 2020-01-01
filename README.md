@@ -2,6 +2,10 @@
 
 Glitch isn't what you might consider a "traditional" WordPress theme; it was coded by myself (Will Leffert) to be used on my personal site, classicwfl.com. It's open source not so you can have a website that looks exactly like mine, but so you can take the ideas I've had and use them in your own work. You're welcome to go ahead and use it as-is (as long as you make it your own, removing my branding, etc etc), but just fair warning: I redesign every 6 months approximately, and once I redesign, I will no longer be maintaining the Glitch theme, making it very risky to use itself.
 
+**Also, an important note:** Glitch will continue to be extended while I'm using it. There's actually a few things I've worked on that I decided to drop before release.
+
+**Another important note:** This theme relies heavily on my own custom post types and fields not set up in functions.php (they are all configured using CPT-UI and ACF), so don't expect this to just work "out of the box".
+
 ## What is Glitch?
 
 Glitch is part of my "Art on the Web" ideal; Every 6 months I redesign my website with a new thought in mind at its core. A frequent topic I touch on is perception; Glitch is an extension of that topic, focusing on perception of identity. While the delivery may be (more than) a little obtuse, I feel it works. I never claimed to be a great artist; just that I am one. Don't agree? I don't care. I've exhibited and sold works for years, which is more validation than I really need, honestly.
