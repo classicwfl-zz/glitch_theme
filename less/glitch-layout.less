@@ -7,7 +7,7 @@ body {
 
 .glitch_container {
     width: 100%;
-    padding: @glitch-spaceXxl @glitch-spaceLg 0 @glitch-spaceLg;
+    padding: @glitch-spaceXxl @glitch-spaceLg @glitch-spaceXxl @glitch-spaceLg;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -46,6 +46,16 @@ body {
 //Misc page settings
 .glitch_pageHead {
     padding: 16px 50px 16px 16px;
+}
+
+// WP caption
+.wp-caption {
+    width: 100% !important;
+
+    & .wp-caption-text {
+        font-family: @glitch-monospaceType;
+        font-style: italic;
+    }
 }
 
 //Post List Stuff

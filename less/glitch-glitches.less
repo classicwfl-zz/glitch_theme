@@ -157,17 +157,31 @@
 /* Headline Glitching */
 
 .gl1tch--text {
-    font-size: 0;
-
-    &:after {
-        content: '_'; //Remove if using below crap
-        font-size: @glitch-fontSizeXxl;
-    }
+    background-color: @glitch-darkColor;
 }
 
-.single .gl1tch--text:after {
-    font-size: @glitch-fontSizeXl;
+.d4rkm0d3 .gl1tch--text {
+    background-color: @glitch-lightColor;
 }
+
+//Another idea for glitching, but can cause page jump issues
+// .gl1tch--text {
+//     font-size: 0;
+
+//     &:after {
+//         content: '_'; //Remove if using below crap
+//         font-size: @glitch-fontSizeXxl;
+
+//         @media (max-width: @glitch-mdBreakpoint) {
+//             font-size: @glitch-fontSizeXl;
+//         }
+
+//     }
+// }
+
+// .single .gl1tch--text:after {
+//     font-size: @glitch-fontSizeXl;
+// }
 
 /* This crap didn't totally work, but I'm leaving it just in case I try to fix it 
 .gl1tch--text.a:after {content: '4';}

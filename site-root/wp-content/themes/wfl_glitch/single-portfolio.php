@@ -45,6 +45,12 @@
                 if (get_field("has_prints")) {
                     echo '<a href="' . $print_url . '" class="btn btn-primary">Get Prints</a>';
                 }
+
+                $webArt_url = get_field("web_art_page");
+
+                if ($webArt_url) {
+                    echo '<a href="' . $webArt_url . '" class="btn btn-primary">View Web Art</a>';
+                }
                 ?>
             <?php 
                 $content = apply_filters( 'the_content', get_the_content() );

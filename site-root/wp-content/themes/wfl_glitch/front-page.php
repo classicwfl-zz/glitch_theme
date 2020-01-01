@@ -44,7 +44,7 @@ get_header(); ?>
 
 		<p>Alternatively, you can hate me and my work and tell me just how much by contacting me. I love hate mail, and if you’re the right (or wrong) kind of lucky, I may share it for my readers in my blog or a video.</p>
 
-		<a href="#" class="btn">Send Hate Mail</a>
+		<a href="<?php get_site_url(); ?>/home/contact" class="btn">Send Hate Mail</a>
 	</div></div>
 </div>
 

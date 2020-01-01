@@ -4,12 +4,13 @@
 
     global $glitch_pageType;
     global $glitch_category;
+
     $glitch_postType = get_post_type();
 
     if(!isset($_COOKIE["darkmode"])){
         $cookie_name = "darkmode";
         $cookie_value = "0";
-        setcookie($cookie_name, $cookie_value, time() + (86400 * 365), "/", "localhost:5010"); // 86400 = 1 day
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 365), "/"); // 86400 = 1 day
     }
 
     if ($_COOKIE["darkmode"]) {
@@ -32,10 +33,10 @@
 
     <div class="glitch_navContainer">
         <h2 class="glitch_termType glitch_termHead">guest@classicwfl.com:<a href="/">~</a>$ ls -R ~/</h2>
-        <p>./<a href="/">home</a>:</p>
+        <p>./<a href="<?php echo get_site_url(); ?>">home</a>:</p>
         <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 
-        <p>./<a href="/articles">articles</a>:</p>
+        <p>./<a href="<?php echo get_site_url(); ?>/articles">articles</a>:</p>
         <!-- Latest Posts -->
         <ul>
         <?php $latest_posts = new WP_Query( 'posts_per_page=1' ); 
@@ -51,7 +52,7 @@
         ?>
         </ul>
 
-        <p>./<a href="<?php get_site_url(); ?>/category/videos/">videos</a>:</p>
+        <p>./<a href="<?php echo get_site_url(); ?>/category/videos/">videos</a>:</p>
         <!-- Latest Videos -->
         <ul>
         <?php 
@@ -91,7 +92,7 @@
         ?>
         </ul>
 
-        <p>./<a href="<?php get_site_url(); ?>/art-portfolio/">art-portfolio</a>:</p>
+        <p>./<a href="<?php echo get_site_url(); ?>/art-portfolio/">art-portfolio</a>:</p>
         <!-- Latest Art -->
         <ul>
         <?php 
@@ -113,7 +114,7 @@
         ?>
         </ul>
 
-        <p>./<a href="<?php get_site_url(); ?>/records/">music</a>:</p>
+        <p>./<a href="<?php echo get_site_url(); ?>/records/">music</a>:</p>
         <!-- Latest Record -->
         <ul>
         <?php 
@@ -135,7 +136,7 @@
         ?>
         </ul>
 
-        <p>./<a href="<?php get_site_url(); ?>/merchandise/">merch</a>:</p>
+        <p>./<a href="<?php echo get_site_url(); ?>/merchandise/">merch</a>:</p>
         <!-- Latest Merch -->
         <ul>
         <?php 
@@ -183,7 +184,12 @@
                             //Output nothing
                         break;
                         default:
-                            echo '/<a href="' . get_site_url() . '/articles">articles</a>'; //catch all to articles
+                            $video_url = get_field("video_url");
+                            if ($video_url) {
+                                echo '/<a href="' . get_site_url() . '/category/videos">videos</a>';
+                            } else {
+                                echo '/<a href="' . get_site_url() . '/articles">articles</a>'; //catch all to articles
+                            }
                         break;
                     }
                     
