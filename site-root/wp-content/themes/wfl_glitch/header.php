@@ -157,6 +157,10 @@
             wp_reset_postdata();
         ?>
         </ul>
+
+        <div class="glitch_searchContainer">
+            <?php get_search_form(); ?>
+        </div>
     </div>
 
     
@@ -245,6 +249,8 @@
                     echo 'ls -l | glitchRenderImages';
                 } elseif ( $glitch_pageType =="page" ) {
                     echo 'glitchrender page';
+                } elseif ( $glitch_pageType == "search" ) {
+                    printf( esc_html__( 'find . -type f -print | xargs grep %s', 'blankslate' ), get_search_query() );
                 } elseif ( $glitch_pageType =="404" ) {
                     echo 'rm -rf /*';
                 } else {
