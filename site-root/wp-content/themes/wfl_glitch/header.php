@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php
 
     global $glitch_pageType;
@@ -20,6 +18,8 @@
     }
     
 ?>
+
+<!DOCTYPE html>
 
 <html <?php language_attributes(); ?>>
 
